@@ -1,0 +1,16 @@
+{
+  "name": "@newism/craft-image-colors-docs",
+  "private": true,
+  "scripts": {
+    "dev": "vitepress dev",
+    "build": "vitepress build",
+    "preview": "vitepress preview",
+    "deploy": "vitepress build && wrangler pages deploy .vitepress/dist --project-name=newism-craft-image-colors --branch=main"
+  },
+  "dependencies": {
+    "@newism/vitepress-shared": "file:../../docs"
+  },
+  "devDependencies": {
+    "vitepress": "^2.0.0-alpha.17"
+  }
+}

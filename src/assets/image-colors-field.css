@@ -1,0 +1,62 @@
+.image-colors-regions {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 8px;
+  align-items: start;
+}
+
+.image-colors-regions dt {
+  font-size: 12px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+
+.image-colors-regions dd {
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 16px;
+}
+
+.image-colors-bar {
+  display: flex;
+  width: 100%;
+  max-width: 200px;
+  height: 24px;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.image-colors-legend-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.image-colors-swatch[data-hex] {
+  cursor: pointer;
+}
+
+.image-colors-legend {
+  display: flex;
+  align-items: center;
+  gap: .5ch;
+  cursor: pointer;
+  font-size: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.image-colors-legend__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 2px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.image-colors-legend__pct {
+  color: #8f98a3;
+  min-width: 3ch;
+  text-align: right;
+}

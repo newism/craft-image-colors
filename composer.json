@@ -1,0 +1,54 @@
+{
+    "name": "newism/craft-image-colors",
+    "description": "Extract beautiful, weighted color palettes from your Craft CMS images",
+    "type": "craft-plugin",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Leevi Graham",
+            "email": "leevi@newism.com.au"
+        }
+    ],
+    "support": {
+        "email": "support@newism.com.au",
+        "source": "https://github.com/newism/craft-image-colors",
+        "docs": "https://plugins.newism.com.au/image-colors"
+    },
+    "require": {
+        "ext-gd": "*",
+        "php": ">=8.2",
+        "craftcms/cms": "^5.6.0"
+    },
+    "require-dev": {
+        "craftcms/ecs": "dev-main",
+        "craftcms/phpstan": "dev-main"
+    },
+    "autoload": {
+        "psr-4": {
+            "newism\\imagecolors\\": "src/"
+        }
+    },
+    "extra": {
+        "handle": "image-colors",
+        "name": "Image Colors",
+        "developer": "Newism",
+        "developerUrl": "https://newism.com.au",
+        "documentationUrl": "https://plugins.newism.com.au/image-colors",
+        "class": "newism\\imagecolors\\ImageColors"
+    },
+    "scripts": {
+        "check-cs": "ecs check --ansi",
+        "fix-cs": "ecs check --ansi --fix",
+        "phpstan": "phpstan --memory-limit=1G"
+    },
+    "config": {
+        "sort-packages": true,
+        "platform": {
+            "php": "8.2"
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true,
+            "craftcms/plugin-installer": true
+        }
+    }
+}

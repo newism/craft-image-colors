@@ -1,0 +1,44 @@
+{% if value is not empty %}
+    {% set regionLabels = {
+        overall: 'Overall',
+        focal: 'Focal',
+        top: 'Top',
+        right: 'Right',
+        bottom: 'Bottom',
+        left: 'Left',
+    } %}
+
+    {% set regionOrder = ['overall', 'focal', 'top', 'right', 'bottom', 'left'] %}
+
+    <dl class="image-colors-regions">
+        {% for regionName in regionOrder %}
+            {% set palette = value.get(regionName) %}
+            {% if palette is not empty %}
+                <dt>{{ regionLabels[regionName] ?? regionName }}</dt>
+                <dd>
+                    <div class="image-colors-bar">
+                        {% for color in palette %}
+                            <div class="image-colors-swatch"
+                                 data-hex="{{ color.hex }}"
+                                 style="flex:{{ (color.weight * 1000)|round }};background:{{ color.hex }};"
+                                 title="{{ color.hex }} ({{ color.percentage }}%) — {{ 'Click to copy'|t('app') }}"></div>
+                        {% endfor %}
+                    </div>
+                    <div class="image-colors-legend-group">
+                        {% for color in palette %}
+                            <div class="image-colors-legend image-colors-swatch"
+                                 data-hex="{{ color.hex }}"
+                                 title="{{ 'Click to copy'|t('app') }} {{ color.hex }}">
+                                <span class="image-colors-legend__dot" style="background:{{ color.hex }};"></span>
+                                <span>{{ color.hex }}</span>
+                                <span class="image-colors-legend__pct">{{ color.percentage }}%</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </dd>
+            {% endif %}
+        {% endfor %}
+    </dl>
+{% else %}
+    <p class="light">{{ 'No colour data. Use the action menu to extract colours, or upload a new image.'|t('app') }}</p>
+{% endif %}
